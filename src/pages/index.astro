@@ -1,16 +1,42 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/layout/Navigation.astro';
+import ParallaxHero from '../components/islands/ParallaxHero';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+import { ROOMS } from '../lib/utils';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="3D Render Gallery - Home">
+  <Navigation />
+  
+  <ParallaxHero 
+    client:load 
+    imageUrl="https://placehold.co/4000x4000/webp"
+    title="3D Architectural Renders"
+    subtitle="Explore stunning visualizations for every room"
+  />
+
+  <main class="container mx-auto px-4 py-16">
+    <section>
+      <h2 class="text-4xl font-bold mb-8 text-center">Explore by Room</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Object.entries(ROOMS).map(([slug, name]) => (
+          <Card>
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold mb-4">{name}</h3>
+              <p class="text-muted-foreground mb-4">
+                Discover beautiful 3D renders for your {name.toLowerCase()}
+              </p>
+              <Button href={`/rooms/${slug}`} variant="outline">
+                View Gallery →
+              </Button>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
+

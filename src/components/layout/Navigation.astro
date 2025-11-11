@@ -1,0 +1,22 @@
+---
+import { ROOMS } from '../../lib/utils';
+---
+
+<nav class="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
+  <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold">3D Gallery</a>
+    
+    <ul class="flex gap-6">
+      {Object.entries(ROOMS).map(([slug, name]) => (
+        <li>
+          <a
+            href={`/rooms/${slug}`}
+            class="text-sm font-medium hover:text-primary transition-colors"
+          >
+            {name}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

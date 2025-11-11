@@ -1,0 +1,12 @@
+{
+	"title": "Spa-Inspired Bathroom",
+	"room": "bathroom",
+	"description": "Luxurious bathroom with rain shower and natural stone finishes",
+	"imageUrl": "https://placehold.co/600x400/EEE/31343C.png",
+	"dimensions": {
+		"width": 1920,
+		"height": 1080
+	},
+	"featured": false,
+	"tags": ["luxury", "spa", "natural"]
+}

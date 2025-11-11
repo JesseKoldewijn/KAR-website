@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/layout/Navigation.astro';
+import ImageGallery from '../../components/islands/ImageGallery';
+import { getCollection } from 'astro:content';
+
+const allRenders = await getCollection('renders');
+const roomRenders = allRenders
+  .filter(render => render.data.room === 'bedroom')
+  .map(render => render.data);
+---
+
+<Layout title="Bedroom - 3D Render Gallery">
+  <Navigation />
+  
+  <main class="container mx-auto px-4 py-16">
+    <h1 class="text-5xl font-bold mb-4">Bedroom Gallery</h1>
+    <p class="text-xl text-muted-foreground mb-12">
+      Explore our collection of bedroom 3D renders
+    </p>
+    
+    <ImageGallery client:visible renders={roomRenders} />
+  </main>
+</Layout>
