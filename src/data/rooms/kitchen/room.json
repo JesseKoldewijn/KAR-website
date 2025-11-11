@@ -1,0 +1,9 @@
+{
+	"slug": "kitchen",
+	"title": "Kitchen Gallery",
+	"subtitle": "Browse through our kitchen 3D renders",
+	"thumbnailUrl": "https://placehold.co/400x300/EEE/31343C.png",
+	"bannerImageUrl": "https://placehold.co/1920x400/EEE/31343C.png",
+	"description": "Functional and beautiful kitchen designs for modern living.",
+	"order": 3
+}

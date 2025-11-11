@@ -29,9 +29,18 @@ importers:
       lucide-preact:
         specifier: ^0.553.0
         version: 0.553.0(preact@10.27.2)
+      motion:
+        specifier: ^12.23.24
+        version: 12.23.24(@preact/compat@18.3.1(preact@10.27.2))(@preact/compat@18.3.1(preact@10.27.2))
       preact:
         specifier: ^10.27.2
         version: 10.27.2
+      react:
+        specifier: npm:@preact/compat
+        version: '@preact/compat@18.3.1(preact@10.27.2)'
+      react-dom:
+        specifier: npm:@preact/compat
+        version: '@preact/compat@18.3.1(preact@10.27.2)'
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.4.0
@@ -478,6 +487,11 @@ packages:
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
+
+  '@preact/compat@18.3.1':
+    resolution: {integrity: sha512-Kog4PSRxtT4COtOXjsuQPV1vMXpUzREQfv+6Dmcy9/rMk0HOPK0HTE9fspFjAmY8R80T/T8gtgmZ68u5bOSngw==}
+    peerDependencies:
+      preact: '*'
 
   '@preact/preset-vite@2.10.2':
     resolution: {integrity: sha512-K9wHlJOtkE+cGqlyQ5v9kL3Ge0Ql4LlIZjkUTL+1zf3nNdF88F9UZN6VTV8jdzBX9Fl7WSzeNMSDG7qECPmSmg==}
@@ -1077,6 +1091,20 @@ packages:
   fontkit@2.0.4:
     resolution: {integrity: sha512-syetQadaUEDNdxdugga9CpEYVaQIxOwk7GlwZWWZ19//qW4zE5bknOKeMBDYAASwnpaSHKJITRLMF9m1fp3s6g==}
 
+  framer-motion@12.23.24:
+    resolution: {integrity: sha512-HMi5HRoRCTou+3fb3h9oTLyJGBxHfW+HnNE25tAXOvVx/IvwMHK0cx7IR4a2ZU6sh3IX1Z+4ts32PcYBOqka8w==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1416,6 +1444,26 @@ packages:
 
   micromark@4.0.2:
     resolution: {integrity: sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==}
+
+  motion-dom@12.23.23:
+    resolution: {integrity: sha512-n5yolOs0TQQBRUFImrRfs/+6X4p3Q4n1dUEqt/H58Vx7OW6RF+foWEgmTVDhIWJIMXOuNNL0apKH2S16en9eiA==}
+
+  motion-utils@12.23.6:
+    resolution: {integrity: sha512-eAWoPgr4eFEOFfg2WjIsMoqJTW6Z8MTUCgn/GZ3VRpClWBdnbjryiA3ZSNLyxCTmCQx4RmYX6jX1iWHbenUPNQ==}
+
+  motion@12.23.24:
+    resolution: {integrity: sha512-Rc5E7oe2YZ72N//S3QXGzbnXgqNrTESv8KKxABR20q2FLch9gHLo0JLyYo2hZ238bZ9Gx6cWhj9VO0IgwbMjCw==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   mrmime@2.0.1:
     resolution: {integrity: sha512-Y3wQdFg2Va6etvQ5I82yUhGdsKrcYox6p7FfL1LbK2J4V01F9TGlepTIhnK24t7koZibmg82KGglhA1XK5IsLQ==}
@@ -2357,6 +2405,10 @@ snapshots:
 
   '@oslojs/encoding@1.1.0': {}
 
+  '@preact/compat@18.3.1(preact@10.27.2)':
+    dependencies:
+      preact: 10.27.2
+
   '@preact/preset-vite@2.10.2(@babel/core@7.28.5)(preact@10.27.2)(vite@6.4.1(@types/node@24.10.0)(jiti@2.6.1)(lightningcss@1.30.2))':
     dependencies:
       '@babel/core': 7.28.5
@@ -2985,6 +3037,15 @@ snapshots:
       unicode-properties: 1.4.1
       unicode-trie: 2.0.0
 
+  framer-motion@12.23.24(@preact/compat@18.3.1(preact@10.27.2))(@preact/compat@18.3.1(preact@10.27.2)):
+    dependencies:
+      motion-dom: 12.23.23
+      motion-utils: 12.23.6
+      tslib: 2.8.1
+    optionalDependencies:
+      react: '@preact/compat@18.3.1(preact@10.27.2)'
+      react-dom: '@preact/compat@18.3.1(preact@10.27.2)'
+
   fsevents@2.3.3:
     optional: true
 
@@ -3522,6 +3583,20 @@ snapshots:
       micromark-util-types: 2.0.2
     transitivePeerDependencies:
       - supports-color
+
+  motion-dom@12.23.23:
+    dependencies:
+      motion-utils: 12.23.6
+
+  motion-utils@12.23.6: {}
+
+  motion@12.23.24(@preact/compat@18.3.1(preact@10.27.2))(@preact/compat@18.3.1(preact@10.27.2)):
+    dependencies:
+      framer-motion: 12.23.24(@preact/compat@18.3.1(preact@10.27.2))(@preact/compat@18.3.1(preact@10.27.2))
+      tslib: 2.8.1
+    optionalDependencies:
+      react: '@preact/compat@18.3.1(preact@10.27.2)'
+      react-dom: '@preact/compat@18.3.1(preact@10.27.2)'
 
   mrmime@2.0.1: {}
 

@@ -1,12 +1,13 @@
 ---
 import { ROOMS } from '../../lib/utils';
+import MobileMenu from '../islands/MobileMenu';
 ---
 
 <nav class="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur">
   <div class="container mx-auto px-4 h-16 flex items-center justify-between">
-    <a href="/" class="text-2xl font-bold">3D Gallery</a>
+    <a href="/" class="text-2xl font-bold z-50">3D Gallery</a>
     
-    <ul class="flex gap-6">
+    <ul class="hidden md:flex gap-6">
       {Object.entries(ROOMS).map(([slug, name]) => (
         <li>
           <a
@@ -18,5 +19,9 @@ import { ROOMS } from '../../lib/utils';
         </li>
       ))}
     </ul>
+
+    <div class="md:hidden">
+      <MobileMenu rooms={ROOMS} client:idle />
+    </div>
   </div>
 </nav>

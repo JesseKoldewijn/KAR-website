@@ -6,5 +6,11 @@ export default defineConfig({
 	integrations: [preact({ compat: true })],
 	vite: {
 		plugins: [tailwindcss()],
+		resolve: {
+			alias: {
+				react: "preact/compat",
+				"react-dom": "preact/compat",
+			},
+		},
 	},
 });

@@ -2,21 +2,27 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/layout/Navigation.astro';
 import ImageGallery from '../../components/islands/ImageGallery';
-import { getCollection } from 'astro:content';
 
-const allRenders = await getCollection('renders');
-const roomRenders = allRenders
-  .filter(render => render.data.room === 'office')
-  .map(render => render.data);
+import room from '../../data/rooms/office/roomConfig';
+
+const roomRenders = room?.renders ?? [];
 ---
 
-<Layout title="Office - 3D Render Gallery">
+<Layout title={`${room.title} - 3D Render Gallery`}>
   <Navigation />
   
+  <div class="w-full h-64 md:h-96 overflow-hidden">
+    <img 
+      src={room.bannerImageUrl} 
+      alt={`${room.title} banner`}
+      class="w-full h-full object-cover"
+    />
+  </div>
+  
   <main class="container mx-auto px-4 py-16">
-    <h1 class="text-5xl font-bold mb-4">Office Gallery</h1>
+    <h1 class="text-5xl font-bold mb-4">{room.title}</h1>
     <p class="text-xl text-muted-foreground mb-12">
-      Explore our collection of office 3D renders
+      {room.subtitle}
     </p>
     
     <ImageGallery client:visible renders={roomRenders} />
